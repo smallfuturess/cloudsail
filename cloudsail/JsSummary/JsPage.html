@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>JsDate集锦</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/premium.css">
+    <link rel="stylesheet" type="text/css" href="../static/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/common/css/commoncss.css">
+    <script src="../static/lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../static/cloudsailjs/cloudsail.js"></script>
+    <script src="../static/common/js/commonjs.js"></script>
+</head>
+<body class=" theme-blue">
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="" href="index.html"><span class="navbar-brand"><span class="fa fa-paper-plane"></span>云帆手册</span></a></div>
+
+    <div class="navbar-collapse collapse" style="height: 1px;">
+        <ul id="main-menu" class="nav navbar-nav navbar-right">
+            <li class="dropdown hidden-xs">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #ffffff">
+                    <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;color: #ffffff"></span> Jack
+                    <i class="fa fa-caret-down" style="color: #ffffff"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</div>
+</div>
+<div class="sidebar-nav">
+    <ul>
+        <li><a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse"><i class="fa fa-fw fa-dashboard"></i> Js 集锦<i class="fa fa-collapse"></i></a></li>
+        <li><ul class="dashboard-menu nav nav-list collapse in">
+            <li><a href="JsDate.html"><span class="fa fa-caret-right"></span> Js Date方法集锦</a></li>
+            <li ><a href="JsAlertComfirm.html"><span class="fa fa-caret-right"></span> Js alert/comfirm重写</a></li>
+            <li ><a href="JsPage.html"><span class="fa fa-caret-right"></span> Js 前端分页封装</a></li>
+        </ul></li>
+
+        <li><a href="#" data-target=".accounts-menu" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-fw fa-briefcase"></i> Java 集锦 <i class="fa fa-collapse"></i></a></li>
+        <li><ul class="accounts-menu nav nav-list collapse">
+            <li ><a href=""><span class="fa fa-caret-right"></span> Sign In</a></li>
+        </ul></li>
+
+        <li><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-fw fa-legal"></i> Others<i class="fa fa-collapse"></i></a></li>
+        <li><ul class="legal-menu nav nav-list collapse">
+            <li ><a href="../OthersSummary/Website.html"><span class="fa fa-caret-right"></span> 常用网址</a></li>
+        </ul></li>
+    </ul>
+</div>
+
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">Alert/Confirm重写</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <ul>
+                <li><a href="#Date1">JsPage</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <!--Js alert重写-->
+    <div class="row">
+        <div class="col-sm-10 col-md-10" style="margin-top: 20px">
+            <div class="panel-heading no-collapse" ><a name="Date1"><font style="color:#337ab7">Js 分页</font></a></div>
+        </div>
+        <div class="col-sm-10 col-md-10" >
+            <div class="panel panel-default">
+                <div class="panel-heading ">函数名:loadpage</div>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th width="40%">参数名</th>
+                        <th>示例</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>rowCount(记录条数)</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>pageIndex(第几页)</td>
+                        <td>1</td>
+                    </tr
+                    <tr>
+                        <td>pageSize(每页条数)</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <th>html  div代码</th>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group">
+                               <textarea class="form-control" rows="3" disabled style="margin-left: 0px;">
+                                      <div  id="pagecontent"></div>
+                               </textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>JSON数据格式</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>{"pageparam":{"pageCount":1,"pageIndex":1,"pageSize":10,"rowCount":1},"dataparam":[{"m_id":1,"ym_id":1,"ym_isdel":1,"ym_loginname":"1234567","ym_name":"呵呵","ym_password":"1234567","ym_phone":"15142154167","ym_sex":"男"}]}</td>
+                        <td>相关说明:pageparam为分页参数，dataparam为数据项参数，Utils.loadpage(5,1,10)函数仅显示分页样式，用户需自行将dataparam数据项组装成需要的table，且table初始加载方法应定义为SourceLoad,从而与首页、上一页、下一页、尾页等的加载保持一致。</td>
+                    </tr>
+                    <tr>
+                        <th>调用示例</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Utils.loadpage(5,1,10)</td>
+                        <td><button type="button" class="btn btn-primary btn-sm" onclick="jspage()">点击显示</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="pageshow" style="display:none;">
+        <div class="col-sm-10 col-md-10" >
+            <div class="panel panel-default">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>真实姓名</th>
+                            <th>性别</th>
+                            <th>联系电话</th>
+                        </tr>
+                        </thead>
+                        <tbody id="listinfo">
+                        </tbody>
+                    </table>
+                    <div  id="pagecontent">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-bottom:200px;">
+        <div style=" position:fixed; right:0px; bottom:10px; width:80px; height:45px; cursor:pointer" id="toTop" onclick="toTop()"><button type="button" class="btn btn-success" >返回顶部</button></div>
+    </div>
+</div>
+</div>
+</div>
+<script src="../static/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
