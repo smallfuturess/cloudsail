@@ -88,7 +88,13 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading  col-md-12"><div class="col-md-8">函数名:getnowdateformat</div> <button type="button" class="btn btn-primary btn-sm" style="float:right">今日日期</button></div>
+                <div class="panel-heading col-md-12"><div class="col-md-8">函数名:getnowdateformat</div>
+                    <div class="col-md-4">
+                          <div class="btn-group btn-group-xs" style="float: right">
+                               <button type="button" class="btn btn-primary" id="dateSource1">源码查看</button>
+                          </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -109,6 +115,30 @@
                         <td>Utils.getnowdateformat()</td>
                         <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate1')">今日日期</button></td>
                     </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source1" style="display: none">
+                               <textarea class="form-control" rows="17" style="margin-left: 0px;" readonly="readonly">
+                                                   /**今日日期格式化(YYYY-MM-DD)*/
+                                                    var _getnowformatdate=function () {
+                                                            var date = new Date();
+                                                            var seperator1 = "-";
+                                                            var year = date.getFullYear();
+                                                            var month = date.getMonth() + 1;
+                                                            var strDate = date.getDate();
+                                                            if (month >= 1 && month <= 9) {
+                                                                month = "0" + month;
+                                                            }
+                                                            if (strDate >= 0 && strDate <= 9) {
+                                                                strDate = "0" + strDate;
+                                                            }
+                                                            var currentdate = year + seperator1 + month + seperator1 + strDate;
+                                                                return currentdate;
+                                                    }
+                               </textarea>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -122,7 +152,13 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading ">函数名:getdatecompare</div>
+                <div class="panel-heading col-md-12"><div class="col-md-8">函数名:getdatecompare</div>
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-xs" style="float: right">
+                            <button type="button" class="btn btn-primary" id="dateSource2">源码查看</button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -163,6 +199,31 @@
                         <td>Utils.getdatecompare('2016-10-01','2016-10-05')</td>
                         <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate2')">开始比较</button></td>
                     </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source2" style="display: none">
+                               <textarea class="form-control" rows="18" style="margin-left: 0px;" readonly="readonly">
+                                                   /**日期大小比较(YYYY-MM-DD)*/
+                                                    var _datecompare=function (date1,date2){
+                                                            var t1 = new Date(date1);
+                                                            var t2 = new Date(date2);
+                                                            if(Date.parse(t1) - Date.parse(t2)==0)
+                                                            {
+                                                                return 0;//想等
+                                                            }
+                                                            if(Date.parse(t1) - Date.parse(t2)<0)
+                                                            {
+                                                                return -1;//前者早于后者
+                                                            }
+                                                            if(Date.parse(t1) - Date.parse(t2)>0)
+                                                            {
+                                                                return 1;//前者迟于后者
+                                                            }
+                                                    }
+                               </textarea>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -176,7 +237,14 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading ">函数名:getweekday</div>
+                <div class="panel-heading col-md-12">
+                    <div class="col-md-8">函数名:getweekday</div>
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-xs" style="float: right">
+                            <button type="button" class="btn btn-primary" id="dateSource3">源码查看</button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -197,6 +265,21 @@
                         <td>Utils.getweekday('2016-10-01')</td>
                         <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate3')">今日星期</button></td>
                     </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source3" style="display: none">
+                               <textarea class="form-control" rows="8" style="margin-left: 0px;" readonly="readonly">
+                                                /**当前日期对应的星期(YYYY-MM-DD)*/
+                                                var _getweekday=function  (date){
+                                                    var d, s = "";
+                                                    var x = new Array("星期日", "星期一", "星期二","星期三","星期四", "星期五","星期六");
+                                                    d = new Date(date);
+                                                    return x[d.getDay()];
+                                                }
+                               </textarea>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -210,7 +293,14 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading ">函数名:getstartweekday</div>
+                <div class="panel-heading col-md-12">
+                    <div class="col-md-8">函数名:getstartweekday</div>
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-xs" style="float: right">
+                            <button type="button" class="btn btn-primary" id="dateSource4">源码查看</button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -231,6 +321,27 @@
                         <td>Utils.getstartweekday('2016-10-01')</td>
                         <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate4')">本周开始日期</button></td>
                     </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source4" style="display: none">
+                               <textarea class="form-control" rows="14" style="margin-left: 0px;" readonly="readonly">
+                                               	/**当前日期推算本周开始日期(YYYY-MM-DD)*/
+                                                var _startweekday=function  (date){
+                                                    var xingqi=_getweekday(date);                       //参照getweekday方法
+                                                    switch(xingqi){
+                                                        case "星期一" : return date;
+                                                        case "星期二" : return _getdatestr(date,-1) ;   //参照getdatestr方法
+                                                        case "星期三" : return _getdatestr(date,-2) ;
+                                                        case "星期四" : return _getdatestr(date,-3) ;
+                                                        case "星期五" : return _getdatestr(date,-4) ;
+                                                        case "星期六" : return _getdatestr(date,-5) ;
+                                                        case "星期日" : return _getdatestr(date,-6) ;
+                                                    }
+                                                }
+                               </textarea>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -244,7 +355,14 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading ">函数名:getendweekday</div>
+                <div class="panel-heading col-md-12">
+                    <div class="col-md-8">函数名:getendweekday</div>
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-xs" style="float: right">
+                            <button type="button" class="btn btn-primary" id="dateSource5">源码查看</button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -265,6 +383,27 @@
                         <td>Utils.getendweekday('2016-10-01')</td>
                         <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate5')">本周结束日期</button></td>
                     </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source5" style="display: none">
+                               <textarea class="form-control" rows="14" style="margin-left: 0px;" readonly="readonly">
+                                                /**当前日期推算本周结束日期(YYYY-MM-DD)*/
+                                                var _endweekday=function(date){
+                                                    var xingqi=_getweekday(date);                       //参照getweekday方法
+                                                    switch(xingqi){
+                                                        case "星期一" : return _getdatestr(date,6) ;    //参照getdatestr方法
+                                                        case "星期二" : return _getdatestr(date,5) ;
+                                                        case "星期三" : return _getdatestr(date,4) ;
+                                                        case "星期四" : return _getdatestr(date,3) ;
+                                                        case "星期五" : return _getdatestr(date,2) ;
+                                                        case "星期六" : return _getdatestr(date,1) ;
+                                                        case "星期日" : return date ;
+                                                    }
+                                                }
+                               </textarea>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -277,7 +416,14 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading ">函数名:getdatestr</div>
+                <div class="panel-heading col-md-12">
+                    <div class="col-md-8">函数名:getdatestr</div>
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-xs" style="float: right">
+                            <button type="button" class="btn btn-primary" id="dateSource6">源码查看</button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -302,6 +448,24 @@
                         <td>Utils.getdatestr('2016-10-01',-2)</td>
                         <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate6')">获取日期</button></td>
                     </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source6" style="display: none">
+                               <textarea class="form-control" rows="11" style="margin-left: 0px;" readonly="readonly">
+                                                /**当前日期(前/后)n天的日期(YYYY-MM-DD)*/
+                                                var _getdatestr=function(date,daycount)
+                                                {
+                                                    var ss = new Date(date);
+                                                    ss.setDate(ss.getDate()+daycount);//获取daycount天后的日期
+                                                    var y = ss.getFullYear();
+                                                    var m = (ss.getMonth()+1)<10?"0"+(ss.getMonth()+1):(ss.getMonth()+1);//获取当前月份的日期，不足10补0
+                                                    var d = ss.getDate()<10?"0"+ss.getDate():ss.getDate(); //获取当前几号，不足10补0
+                                                    return y+"-"+m+"-"+d;
+                                                }
+                               </textarea>
+                            </div>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -314,7 +478,14 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading ">函数名:getdatediff</div>
+                <div class="panel-heading col-md-12">
+                    <div class="col-md-8">函数名:getdatediff</div>
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-xs" style="float: right">
+                            <button type="button" class="btn btn-primary" id="dateSource7">源码查看</button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -337,7 +508,22 @@
                     </tr>
                     <tr>
                         <td>Utils.getdatediff('2016-10-01','2016-10-10')</td>
-                        <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate7')">获取日期</button></td>
+                        <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate7')">获取天数</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source7" style="display: none">
+                               <textarea class="form-control" rows="8" style="margin-left: 0px;" readonly="readonly">
+                                                /**计算两个日期之间的天数(YYYY-MM-DD)*/
+                                                var _datediff= function  (sDate1,  sDate2){    //sDate1和sDate2是2006-12-18格式
+                                                    var startTime = new Date(Date.parse(sDate1.replace(/-/g,"/"))).getTime();
+                                                    var endTime = new Date(Date.parse(sDate2.replace(/-/g,"/"))).getTime();
+                                                    var dates = Math.abs((startTime - endTime))/(1000*60*60*24);
+                                                    return  dates;
+                                                }
+                               </textarea>
+                            </div>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -351,7 +537,14 @@
         </div>
         <div class="col-sm-10 col-md-10" >
             <div class="panel panel-default">
-                <div class="panel-heading ">函数名:getmonthdateinit</div>
+                <div class="panel-heading col-md-12">
+                    <div class="col-md-8">函数名:getmonthdateinit</div>
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-xs" style="float: right">
+                            <button type="button" class="btn btn-primary" id="dateSource8">源码查看</button>
+                        </div>
+                    </div>
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -375,6 +568,53 @@
                     <tr>
                         <td>Utils.getmonthdateinit().EndTime</td>
                         <td><button type="button" class="btn btn-primary btn-sm" onclick="jsdate('jsdate9')">上月月末日期</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" id="Source8" style="display: none">
+                               <textarea class="form-control" rows="40" style="margin-left: 0px;" readonly="readonly">
+                                                     /**当前日期推算上月开始/结束日期(YYYY-MM-DD) */
+                                                    var _monthdateinit=function (){
+                                                        var myDate=new Date();//日期初始化
+                                                        var year=myDate.getFullYear();
+                                                        var month=myDate.getMonth();
+                                                        month=month+1;
+                                                        var From;
+                                                        var To;
+                                                        var flag;
+                                                        if((year%4==0 && year%100!=0)||(year%100==0 && year%400==0)){
+                                                            flag=true;
+                                                        }
+                                                        switch(month){
+                                                            case 1:year=year-1;From=year+'-'+'12'+'-01 00:00:00';To=year+'-'+'12'+'-31 23:59:59';
+                                                                break;
+                                                            case 2:case 4:case 6 :case 8:case 9: case 11:
+                                                            month=month-1;
+                                                            if(month<10){
+                                                                month="0"+month;
+                                                            }
+                                                            From=year+'-'+month+'-01 00:00:00';To=year+'-'+month+'-31 23:59:59';break;
+                                                            case 5:case 7:case 10:case 12:
+                                                            month=month-1;
+                                                            if(month<10){
+                                                                month="0"+month;
+                                                            }
+                                                            From=year+'-'+month+'-01 00:00:00';To=year+'-'+month+'-30 23:59:59';break;
+                                                            case 3:
+                                                                month=month-1;
+                                                                month="0"+month;
+                                                                if(flag){
+                                                                    From=year+'-'+month+'-01 00:00:00';To=year+'-'+month+'-29 23:59:59';break;
+                                                                }else{
+                                                                    From=year+'-'+month+'-01 00:00:00';To=year+'-'+month+'-28 23:59:59';break;
+                                                                }
+                                                        }
+                                                        var datainit={StartTime:From.substr(0,10),EndTime:To.substr(0,10)};
+                                                        return datainit;
+                                                    };
+                               </textarea>
+                            </div>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

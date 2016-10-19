@@ -6,6 +6,31 @@ $(function(){
         $("html").animate({"scrollTop": "0px"},100); //IE,FF
         $("body").animate({"scrollTop": "0px"},100); //Webkit
     });
+
+    $("#dateSource1").click(function(){
+        $ ("#Source1").slideToggle(800);
+    });
+    $("#dateSource2").click(function(){
+        $ ("#Source2").slideToggle(800);
+    });
+    $("#dateSource3").click(function(){
+        $ ("#Source3").slideToggle(800);
+    });
+    $("#dateSource4").click(function(){
+        $ ("#Source4").slideToggle(800);
+    });
+    $("#dateSource5").click(function(){
+        $ ("#Source5").slideToggle(800);
+    });
+    $("#dateSource6").click(function(){
+        $ ("#Source6").slideToggle(800);
+    });
+    $("#dateSource7").click(function(){
+        $ ("#Source7").slideToggle(800);
+    });
+    $("#dateSource8").click(function(){
+        $ ("#Source8").slideToggle(800);
+    });
 });
 $(function() {
     $('.demo-cancel-click').click(function(){return false;});
@@ -24,6 +49,7 @@ function jsdate(type){
         case 'jsdate9':Utils.alertwin(Utils.getmonthdateinit().EndTime);break;
     }
 }
+
 
 function JsAlertConfrim(type){
     switch (type){
