@@ -5,13 +5,13 @@ a:link,a:visited,a:hover{
     color: #fff;
 }
 .col-md-10{
-    margin-left:135px;
+    margin-left:10%;
 }
 .table th,td{
     border:0px!important;
 }
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
-    padding-left: 140px;
+    padding-left: 10%;
 }
 .no-collapse {
     padding-left: 0px;
@@ -27,4 +27,16 @@ a:link,a:visited,a:hover{
 }
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
     color: #fff;
+}
+.content{
+    min-height: 890px;
+}
+.tdcontent{
+    padding:0px!important;
+}
+li{margin:0; padding:0; list-sytle:none}
+textarea{
+    border-radius: 0px!important;
+    background-color: #ffffff!important;
+    border: 0px !important;
 }

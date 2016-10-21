@@ -15,7 +15,7 @@ $(function () {
 	 */
 	$(function() {
 		var alerthtml = "<div class='modal fade' style='overflow:auto;overflow-y:scroll;' id='ycf-alert' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>"
-			+ "<div class='modal-dialog' style='width:350px;margin-top:250px;'>"
+			+ "<div class='modal-dialog' style='width:350px;margin-top:230px;'>"
 			+ "<div class='modal-content'>"
 			+ "<div class='modal-header'>"
 			+ "<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>"
